@@ -18,6 +18,12 @@ Logs/
 **/Logs/
 [Uu]ser[Ss]ettings/
 **/[Uu]ser[Ss]ettings/
+[Pp]ackages/
+*/[Pp]ackages/
+**/[Pp]ackages/
+[Pp]roject[Ss]ettings/
+*/[Pp]roject[Ss]ettings/
+**/[Pp]roject[Ss]ettings/
 
 # custom ignore added by ben since funny files weren't working
 *.dylib
