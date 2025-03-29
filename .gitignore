@@ -12,8 +12,10 @@
 **/[Bb]uild/
 [Bb]uilds/
 **/[Bb]uilds/
-[Ll]ogs/
-**/[Ll]ogs/
+The Art of War/Logs/
+Logs/
+*/Logs/
+**/Logs/
 [Uu]ser[Ss]ettings/
 **/[Uu]ser[Ss]ettings/
 
