@@ -22,6 +22,7 @@ Logs/
 # custom ignore added by ben since funny files weren't working
 *.dylib
 *.apiupaterconfigs
+*.log
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
