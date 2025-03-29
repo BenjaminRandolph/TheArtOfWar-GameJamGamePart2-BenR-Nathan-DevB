@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // ** Objects To Include **
     // the rigidbody of our player
     private Rigidbody2D rb;
+    // I'm not going to explain these lol
     private SpriteRenderer thingThatLetsMeFindTheSizeOfTheObject;
     private RaycastHit2D hit;
     private Vector2 size;
@@ -60,7 +61,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         thingThatLetsMeFindTheSizeOfTheObject = GetComponent<SpriteRenderer>();
-
     }
 
     // Update is called once per frame
@@ -90,15 +90,27 @@ public class PlayerController : MonoBehaviour
         if( Input.GetKey(right) ){
             Move(increment);
         }
+
+        if( Input.GetKeyDown(attackRegular) ){
+            if(Input.GetKey(up)){
+                Attack("up");
+            }else if(Input.GetKey(down)){
+                Attack("down");
+            }else if( Input.GetKey(left) || ( !Input.GetKey(right) && (rb.linearVelocityX < 0.0f) ) ){
+                Attack("left");
+            }else{
+                Attack("right");
+            }
+        }
     }
 
     // make the player jump
-    void Jump(){
+    private void Jump(){
         rb.linearVelocityY += jumpForce;
     }
 
     // make the player move in a direction
-    void Move( float incrementDirectional ){
+    private void Move( float incrementDirectional ){
         if(incrementDirectional < 0){
             if( rb.linearVelocityX > -maxSpeed ){
                 rb.linearVelocityX += incrementDirectional;
@@ -111,12 +123,44 @@ public class PlayerController : MonoBehaviour
     }
 
     // make the player attack
-    void Attack(){
+    private void Attack(string direction){
+        Debug.Log("attacking in this direction: " + direction);
 
+        Vector2 directionVector;
+        if(direction == "up"){
+            directionVector = new Vector2(0, 1);
+        }else if(direction == "down"){
+            directionVector = new Vector2(0, -1);
+        }else if(direction == "left"){
+            directionVector = new Vector2(-1, 0);
+        }else{
+            directionVector = new Vector2(1, 0);
+        }
+
+        int layerForRaycast = 6;
+        if(this.gameObject.layer == 6){
+            layerForRaycast = 7;
+        }
+
+        hit = Physics2D.Raycast(transform.position, directionVector, rangeOfAttack, layerForRaycast);
+
+        if(hit){
+            Debug.Log("Hit something!");
+            PlayerController playerHit = hit.collider.gameObject.GetComponent<PlayerController>();
+            playerHit.TakeDamage(baseAttackDamage);
+            Debug.Log("did damage to it!");
+        }
     }
 
     // make the player recieve damage
-    public void TakeDamage(){
+    public void TakeDamage( int damageToTake){
+        health -= damageToTake;
+        if(health < 0){
+            Die();
+        }
+    }
+
+    private void Die(){
 
     }
 }
