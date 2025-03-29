@@ -10,6 +10,11 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# custom ignore added by ben since funny files weren't working
+*.dylib
+*.apiupaterconfigs
+[Ll]ibrary/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
