@@ -3,27 +3,27 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 [Ll]ibrary/
+*/[Ll]ibrary/
 **/[Ll]ibrary/
 [Tt]emp/
+*/[Tt]emp/
 **/[Tt]emp/
 [Oo]bj/
+*/[Oo]bj/
 **/[Oo]bj/
 [Bb]uild/
+*/[Bb]uild/
 **/[Bb]uild/
 [Bb]uilds/
+*/[Bb]uilds/
 **/[Bb]uilds/
 "The Art of War"/Logs/
 Logs/
 */Logs/
 **/Logs/
 [Uu]ser[Ss]ettings/
+*/[Uu]ser[Ss]ettings/
 **/[Uu]ser[Ss]ettings/
-[Pp]ackages/
-*/[Pp]ackages/
-**/[Pp]ackages/
-[Pp]roject[Ss]ettings/
-*/[Pp]roject[Ss]ettings/
-**/[Pp]roject[Ss]ettings/
 
 # custom ignore added by ben since funny files weren't working
 *.dylib
