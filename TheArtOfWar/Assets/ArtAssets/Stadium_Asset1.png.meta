@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd85dd22d3869724b995da1e893bba4c
+guid: 68e64534f1004d74b84516b83b514486
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -196,7 +196,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -222,10 +222,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -235,14 +235,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -1375,7 +1375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -1384,7 +1384,58 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stadium_Asset1_0: 2078365582187261315
+      Stadium_Asset1_1: -7056885186866844773
+      Stadium_Asset1_10: 2643227333327793229
+      Stadium_Asset1_11: 7829487361421780732
+      Stadium_Asset1_12: 5361459919794071135
+      Stadium_Asset1_13: -3564925788021684883
+      Stadium_Asset1_14: -2160843418411177629
+      Stadium_Asset1_15: 2835715526666597309
+      Stadium_Asset1_16: 6781285461467163256
+      Stadium_Asset1_17: -4600994974051472665
+      Stadium_Asset1_18: -6608052427534953383
+      Stadium_Asset1_19: 4850950509036002128
+      Stadium_Asset1_2: -3152568695398711961
+      Stadium_Asset1_20: 8378705758534215295
+      Stadium_Asset1_21: -7430520432838770929
+      Stadium_Asset1_22: -5297546352451198312
+      Stadium_Asset1_23: -646138359454622466
+      Stadium_Asset1_24: -6208476308605820738
+      Stadium_Asset1_25: -7007296154423832726
+      Stadium_Asset1_26: -594643747139747971
+      Stadium_Asset1_27: -3085942513775753603
+      Stadium_Asset1_28: 5080719832373055817
+      Stadium_Asset1_29: -6735703090205855485
+      Stadium_Asset1_3: 7060776939209914928
+      Stadium_Asset1_30: -8246059548054664797
+      Stadium_Asset1_31: 8807606259771992766
+      Stadium_Asset1_32: -98764307783119856
+      Stadium_Asset1_33: -5377032693051131412
+      Stadium_Asset1_34: 1683046030238802852
+      Stadium_Asset1_35: -8113099231251704047
+      Stadium_Asset1_36: 3565958916203782942
+      Stadium_Asset1_37: -8156606365457756998
+      Stadium_Asset1_38: -795916403380940452
+      Stadium_Asset1_39: 8757593897745198883
+      Stadium_Asset1_4: 2827486432326707897
+      Stadium_Asset1_40: -939635340237560254
+      Stadium_Asset1_41: -7566237291345924438
+      Stadium_Asset1_42: -7916864482212262217
+      Stadium_Asset1_43: -4629959764788948316
+      Stadium_Asset1_44: -8436321980426394472
+      Stadium_Asset1_45: 7994379836692561372
+      Stadium_Asset1_46: -8014706158089807871
+      Stadium_Asset1_47: -4263263072967476430
+      Stadium_Asset1_48: -7642013994922238172
+      Stadium_Asset1_49: 873757940062938912
+      Stadium_Asset1_5: -855014429013044892
+      Stadium_Asset1_50: -1670653016283185070
+      Stadium_Asset1_6: 3910159472100566564
+      Stadium_Asset1_7: -4315511086017643274
+      Stadium_Asset1_8: -4897724861611096210
+      Stadium_Asset1_9: 8682504615555744099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

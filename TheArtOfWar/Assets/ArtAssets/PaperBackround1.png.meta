@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9ccd327f3293dc4ba000a407ef8eaf6
+guid: 7a88bdf6f518dd849a25de4481d65166
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PaperBackround1_0: 7459426540436145693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
