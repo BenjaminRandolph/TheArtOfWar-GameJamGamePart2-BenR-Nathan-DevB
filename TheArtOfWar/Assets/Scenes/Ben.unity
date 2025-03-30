@@ -830,7 +830,8 @@ GameObject:
   m_Component:
   - component: {fileID: 653162915}
   - component: {fileID: 653162914}
-  - component: {fileID: 653162916}
+  - component: {fileID: 653162920}
+  - component: {fileID: 653162919}
   - component: {fileID: 653162918}
   - component: {fileID: 653162917}
   m_Layer: 6
@@ -910,38 +911,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &653162916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653162913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22d1c694f44456438cc49adf3ac0d10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 8
-  increment: 0.2
-  jumpForce: 10
-  grounded: 0
-  baseAttackDamage: 10
-  rangeOfAttack: 4
-  startAttackLag: 0.05
-  endAttackLag: 0.1
-  freezeTime: 0.5
-  canDoDamage: 0
-  previousAttackDirection: 
-  repeatHit: 0
-  baseKnockback: 2
-  health: 100
-  up: 119
-  down: 115
-  left: 97
-  right: 100
-  jump: 32
-  attackRegular: 103
 --- !u!61 &653162917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1015,6 +984,60 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &653162919
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653162913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &653162920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653162913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44999b83656cae645b3b9925b6893e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 8
+  increment: 0.3
+  jumpForce: 10
+  grounded: 0
+  baseAttackDamage: 10
+  rangeOfAttack: 4
+  startAttackLag: 0.2
+  endAttackLag: 0.3
+  freezeTime: 1
+  canDoDamage: 0
+  previousAttackDirection: 
+  repeatHit: 0
+  baseKnockback: 2
+  health: 100
+  up: 119
+  down: 115
+  left: 97
+  right: 100
+  jump: 32
+  attackRegular: 103
 --- !u!1 &1046930594
 GameObject:
   m_ObjectHideFlags: 0
