@@ -1588,9 +1588,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe73e4a4b7142b4bbbc6591320bc2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDuration: 3
   fadeInDuration: 3
   pauseDuration: 1
-  fadeOutDuration: 2
+  fadeOutDuration: 3
+  endDuration: 3
   logoScene: 1
 --- !u!1 &1310822166
 GameObject:

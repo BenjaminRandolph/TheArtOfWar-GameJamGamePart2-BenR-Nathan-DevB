@@ -4,9 +4,11 @@ using UnityEngine;
 public class SpriteFader : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    public float startDuration = 1f;
     public float fadeInDuration = 1f;   // Time to fade in
     public float pauseDuration = 1f;    // Time to stay fully visible
     public float fadeOutDuration = 1f;  // Time to fade out
+    public float endDuration = 1f;
 
     public bool logoScene = true;
 
@@ -18,6 +20,8 @@ public class SpriteFader : MonoBehaviour
 
     IEnumerator FadeSequence()
     {
+        yield return StartCoroutine(Fade(0f, 0f, startDuration));
+        
         // Fade In
         yield return StartCoroutine(Fade(0f, 1f, fadeInDuration));
 
@@ -26,6 +30,8 @@ public class SpriteFader : MonoBehaviour
 
         // Fade Out
         yield return StartCoroutine(Fade(1f, 0f, fadeOutDuration));
+
+       yield return StartCoroutine(Fade(0f, 0f, endDuration));
 
         // Fade out completed, optionally disable the GameObject
         gameObject.SetActive(false); // Optional: Disable GameObject after fading out
