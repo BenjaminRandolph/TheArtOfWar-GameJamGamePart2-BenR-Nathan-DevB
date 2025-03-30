@@ -8,12 +8,12 @@ public class SpriteFader : MonoBehaviour
     public float pauseDuration = 1f;    // Time to stay fully visible
     public float fadeOutDuration = 1f;  // Time to fade out
 
+    public bool logoScene = true;
+
     void Start()
     {
-        bool logoScene = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(FadeSequence());
-        logoScene = false;
     }
 
     IEnumerator FadeSequence()
@@ -29,6 +29,7 @@ public class SpriteFader : MonoBehaviour
 
         // Fade out completed, optionally disable the GameObject
         gameObject.SetActive(false); // Optional: Disable GameObject after fading out
+        logoScene = false;
     }
 
     IEnumerator Fade(float startAlpha, float targetAlpha, float duration)
