@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 88296760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45885932, y: -0.2, z: -12}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -929,6 +929,7 @@ GameObject:
   - component: {fileID: 529548223}
   - component: {fileID: 529548225}
   - component: {fileID: 529548224}
+  - component: {fileID: 529548226}
   m_Layer: 0
   m_Name: WallRight
   m_TagString: Untagged
@@ -1052,6 +1053,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &529548226
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529548222}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 272e10bcabe4f664db1d4776898a089f, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &564535530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,6 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65569be64bea4c84e94c37803006764c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicked: 0
 --- !u!114 &1322288751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,6 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65569be64bea4c84e94c37803006764c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicked: 0
 --- !u!1 &1379849699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +2023,11 @@ MonoBehaviour:
   stage: {fileID: 1046930594}
   blackBackground: {fileID: 0}
   studioLogo: {fileID: 0}
+  settingsMenu: {fileID: 0}
+  UDMcheckBox: {fileID: 0}
+  UDMcheck: {fileID: 0}
+  mainCamera: {fileID: 0}
+  backButton: {fileID: 0}
 --- !u!1 &1397086409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2039,7 @@ GameObject:
   - component: {fileID: 1397086410}
   - component: {fileID: 1397086412}
   - component: {fileID: 1397086411}
+  - component: {fileID: 1397086413}
   m_Layer: 0
   m_Name: WallLeft
   m_TagString: Untagged
@@ -2127,6 +2163,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1397086413
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397086409}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 272e10bcabe4f664db1d4776898a089f, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1418887214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,7 +2623,7 @@ Transform:
   m_GameObject: {fileID: 1855077214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45885932, y: -0.2, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2923,7 +2986,7 @@ Transform:
   m_GameObject: {fileID: 1939796861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45885932, y: -0.2, z: -12}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3253,6 +3316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154f4ebda8084ea4d8252f6667444163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicked: 0
 --- !u!1 &2061235737
 GameObject:
   m_ObjectHideFlags: 0
