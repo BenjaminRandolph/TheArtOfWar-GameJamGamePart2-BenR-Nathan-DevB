@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class exitButton : MonoBehaviour
+public class playButtonMain : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
