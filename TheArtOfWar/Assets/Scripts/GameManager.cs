@@ -30,12 +30,22 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject stage;
 
+    [SerializeField]
+    GameObject blackBackground;
+
+    [SerializeField]
+    GameObject studioLogo;
+
     bool mainMenuActive = true;
 
     bool pauseMenuActive = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
+
+        blackBackground.SetActive(true);
+        studioLogo.SetActive(true);
+
 
         playButtonMain.SetActive(true);
         exitButtonMain.SetActive(true);
@@ -101,6 +111,8 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(false);
                 pauseMenuActive = false;
                 playButton.GetComponent<playButton>().clicked = false;
+
+                Time.timeScale = 1;
 
             }
 
