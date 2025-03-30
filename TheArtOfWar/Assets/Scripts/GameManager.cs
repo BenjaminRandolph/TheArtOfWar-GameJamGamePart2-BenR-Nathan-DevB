@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     bool UDMActive = false;
 
+    bool settingsMenuActive = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
 
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
         settingsMenu.SetActive(false);
         UDMcheckBox.SetActive(false);
         UDMcheck.SetActive(false);
+        backButton.SetActive(false);
 
         stage.SetActive(false);
 
@@ -132,6 +135,8 @@ public class GameManager : MonoBehaviour
 
                 settingsMenu.SetActive(true);
                 UDMcheckBox.SetActive(true);
+                backButton.SetActive(true);
+                settingsMenuActive = true;
                 
                 if(!UDMActive){
 
@@ -162,7 +167,7 @@ public class GameManager : MonoBehaviour
             }
             UDMcheckBox.GetComponent<checkBox>().clicked = false;
 
-            if(backButton.GetComponent<backButton>().clicked){
+            if(backButton.GetComponent<backButton>().clicked || Input.GetKeyDown("escape") && settingsMenuActive){
 
                 backButton.GetComponent<backButton>().clicked = false;
                 playButtonMain.SetActive(true);
@@ -172,6 +177,9 @@ public class GameManager : MonoBehaviour
 
                 settingsMenu.SetActive(false);
                 UDMcheckBox.SetActive(false);
+                backButton.SetActive(false);
+                UDMcheck.SetActive(false);
+                settingsMenuActive = false;
 
             }
 
@@ -179,7 +187,7 @@ public class GameManager : MonoBehaviour
         else{   // Pause Menu
 
             // The pause menu is open, play and esc can close it
-            if(!pauseMenuActive && Input.GetKeyDown("escape")){
+            if(!pauseMenuActive && !settingsMenuActive && Input.GetKeyDown("escape")){
 
                 playButton.SetActive(true);
                 exitButton.SetActive(true);
@@ -192,7 +200,7 @@ public class GameManager : MonoBehaviour
             }
 
             // The pause menu is closed, esc can open it
-            else if(pauseMenuActive && (playButton.GetComponent<playButton>().clicked || Input.GetKeyDown("escape"))){
+            else if(pauseMenuActive && !settingsMenuActive && (playButton.GetComponent<playButton>().clicked || Input.GetKeyDown("escape"))){
                 
                 playButton.SetActive(false);
                 exitButton.SetActive(false);
@@ -233,6 +241,8 @@ public class GameManager : MonoBehaviour
 
                 settingsMenu.SetActive(true);
                 UDMcheckBox.SetActive(true);
+                backButton.SetActive(true);
+                settingsMenuActive = true;
                 
                 if(!UDMActive){
 
@@ -264,7 +274,7 @@ public class GameManager : MonoBehaviour
             }
             UDMcheckBox.GetComponent<checkBox>().clicked = false;
 
-            if(backButton.GetComponent<backButton>().clicked){
+            if(backButton.GetComponent<backButton>().clicked || Input.GetKeyDown("escape") && settingsMenuActive){
 
                 backButton.GetComponent<backButton>().clicked = false;
                 playButton.SetActive(true);
@@ -274,6 +284,9 @@ public class GameManager : MonoBehaviour
 
                 settingsMenu.SetActive(false);
                 UDMcheckBox.SetActive(false);
+                backButton.SetActive(false);
+                UDMcheck.SetActive(false);
+                settingsMenuActive = false;
 
             }
 
