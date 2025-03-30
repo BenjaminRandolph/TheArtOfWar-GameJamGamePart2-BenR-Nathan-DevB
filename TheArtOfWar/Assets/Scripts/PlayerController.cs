@@ -193,8 +193,16 @@ public class PlayerController : MonoBehaviour
         if(hit2 && !repeatHit){
             Debug.Log("Hit something!" + hit2.collider.gameObject.name);
             hit2.collider.gameObject.GetComponent<PlayerController>().TakeDamage(baseAttackDamage);
-            hit2.collider.gameObject.GetComponent<Rigidbody2D>().linearVelocityX += baseKnockback * baseAttackDamage / 4;
-            hit2.collider.gameObject.GetComponent<Rigidbody2D>().linearVelocityY += baseKnockback * baseAttackDamage / 4;
+            Rigidbody2D hitRB = hit2.collider.gameObject.GetComponent<Rigidbody2D>();
+
+            if( hit2.transform.position.x < transform.position.x ){
+                hitRB.linearVelocityX -= baseKnockback * baseAttackDamage / 4;
+                hitRB.linearVelocityY += baseKnockback * baseAttackDamage / 4;
+            }else{
+                hitRB.linearVelocityX += baseKnockback * baseAttackDamage / 4;
+                hitRB.linearVelocityY += baseKnockback * baseAttackDamage / 4;
+            }
+
             Debug.Log("did damage to it!");
             repeatHit = true;
         }
