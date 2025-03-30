@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class playButtonMain : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public bool clicked = false;
+    public void closePauseMenu(){
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        clicked = true;
+
     }
 }
