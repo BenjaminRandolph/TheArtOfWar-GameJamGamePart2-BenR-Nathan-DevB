@@ -103,7 +103,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -600,7 +600,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      upsidedownModeAsset1_0: 1844200638445240926
+      upsidedownModeAsset1_1: -6870137100689385966
+      upsidedownModeAsset1_10: 2129628133928292155
+      upsidedownModeAsset1_11: -4786348295705212996
+      upsidedownModeAsset1_12: 470177909929434665
+      upsidedownModeAsset1_13: -2336272703023506116
+      upsidedownModeAsset1_14: 9200775359938320183
+      upsidedownModeAsset1_15: 8841563190854967247
+      upsidedownModeAsset1_16: 3361054682432963016
+      upsidedownModeAsset1_17: 810242916533050697
+      upsidedownModeAsset1_18: -6579969593923991219
+      upsidedownModeAsset1_19: -7086054132211062017
+      upsidedownModeAsset1_2: -4550821180340408394
+      upsidedownModeAsset1_3: -1011259305353189291
+      upsidedownModeAsset1_4: 5662673842509484722
+      upsidedownModeAsset1_5: 5442705757522898672
+      upsidedownModeAsset1_6: -5746398183952124124
+      upsidedownModeAsset1_7: -2928824359096941749
+      upsidedownModeAsset1_8: 8820393201786980849
+      upsidedownModeAsset1_9: 2775214231247000530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

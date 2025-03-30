@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class settingsButtonMain : MonoBehaviour
+public class backButton : MonoBehaviour
 {
 
     public bool clicked = false;
-    public void openSettings(){
+    public void leaveSettings(){
 
         clicked = true;
 

@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class settingsButton : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public bool clicked = false;
+    public void openSettings(){
+
+        clicked = true;
+
     }
+    
 }

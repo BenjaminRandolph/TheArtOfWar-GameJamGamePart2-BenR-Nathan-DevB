@@ -36,9 +36,26 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject studioLogo;
 
+    [SerializeField]
+    GameObject settingsMenu;
+
+    [SerializeField]
+    GameObject UDMcheckBox;
+
+    [SerializeField]
+    GameObject UDMcheck;
+
+    [SerializeField]
+    GameObject mainCamera;
+
+    [SerializeField]
+    GameObject backButton;
+
     bool mainMenuActive = true;
 
     bool pauseMenuActive = false;
+
+    bool UDMActive = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
@@ -57,6 +74,10 @@ public class GameManager : MonoBehaviour
         settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
 
+        settingsMenu.SetActive(false);
+        UDMcheckBox.SetActive(false);
+        UDMcheck.SetActive(false);
+
         stage.SetActive(false);
 
     }
@@ -64,7 +85,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update(){
 
-        if(studioLogo.GetComponent<SpriteFader>().logoScene){
+        if(studioLogo.GetComponent<SpriteFader>().logoScene){   // Logo Cutscene
         
             if(Input.anyKeyDown){
 
@@ -80,7 +101,7 @@ public class GameManager : MonoBehaviour
 
         }
         
-        if(mainMenuActive){
+        if(mainMenuActive){ // Main Menu
 
             if(playButtonMain.GetComponent<playButtonMain>().clicked){
 
@@ -101,8 +122,61 @@ public class GameManager : MonoBehaviour
 
             }
 
+            if(settingsButtonMain.GetComponent<settingsButtonMain>().clicked){  // Settings Menu (Main)
+
+                settingsButtonMain.GetComponent<settingsButtonMain>().clicked = false;
+                playButtonMain.SetActive(false);
+                exitButtonMain.SetActive(false);
+                settingsButtonMain.SetActive(false);
+                mainMenu.SetActive(false);
+
+                settingsMenu.SetActive(true);
+                UDMcheckBox.SetActive(true);
+                
+                if(!UDMActive){
+
+                    UDMcheck.SetActive(false);
+
+                }
+                else{
+
+                    UDMcheck.SetActive(true);
+
+                }
+
+            }
+
+            if(UDMcheckBox.GetComponent<checkBox>().clicked && UDMcheck.activeSelf){
+
+                UDMcheck.SetActive(false);
+                UDMActive = false;
+                mainCamera.transform.Rotate(0, 0, -180);
+
+            }
+            else if(UDMcheckBox.GetComponent<checkBox>().clicked){
+
+                UDMcheck.SetActive(true);
+                UDMActive = true;
+                mainCamera.transform.Rotate(0, 0, 180);
+
+            }
+            UDMcheckBox.GetComponent<checkBox>().clicked = false;
+
+            if(backButton.GetComponent<backButton>().clicked){
+
+                backButton.GetComponent<backButton>().clicked = false;
+                playButtonMain.SetActive(true);
+                exitButtonMain.SetActive(true);
+                settingsButtonMain.SetActive(true);
+                mainMenu.SetActive(true);
+
+                settingsMenu.SetActive(false);
+                UDMcheckBox.SetActive(false);
+
+            }
+
         }
-        else{
+        else{   // Pause Menu
 
             // The pause menu is open, play and esc can close it
             if(!pauseMenuActive && Input.GetKeyDown("escape")){
@@ -146,6 +220,60 @@ public class GameManager : MonoBehaviour
                 exitButtonMain.SetActive(true);
                 settingsButtonMain.SetActive(true);
                 mainMenu.SetActive(true);
+
+            }
+
+            if(settingsButton.GetComponent<settingsButton>().clicked){  // Settings Menu (Pause)
+
+                settingsButton.GetComponent<settingsButton>().clicked = false;
+                playButton.SetActive(false);
+                exitButton.SetActive(false);
+                settingsButton.SetActive(false);
+                pauseMenu.SetActive(false);
+
+                settingsMenu.SetActive(true);
+                UDMcheckBox.SetActive(true);
+                
+                if(!UDMActive){
+
+                    UDMcheck.SetActive(false);
+
+                }
+                else{
+
+                    UDMcheck.SetActive(true);
+
+                }
+
+
+            }
+
+            if(UDMcheckBox.GetComponent<checkBox>().clicked && UDMcheck.activeSelf){
+
+                UDMcheck.SetActive(false);
+                UDMActive = false;
+                mainCamera.transform.Rotate(0, 0, -180);
+
+            }
+            else if(UDMcheckBox.GetComponent<checkBox>().clicked){
+
+                UDMcheck.SetActive(true);
+                UDMActive = true;
+                mainCamera.transform.Rotate(0, 0, 180);
+
+            }
+            UDMcheckBox.GetComponent<checkBox>().clicked = false;
+
+            if(backButton.GetComponent<backButton>().clicked){
+
+                backButton.GetComponent<backButton>().clicked = false;
+                playButton.SetActive(true);
+                exitButton.SetActive(true);
+                settingsButton.SetActive(true);
+                pauseMenu.SetActive(true);
+
+                settingsMenu.SetActive(false);
+                UDMcheckBox.SetActive(false);
 
             }
 

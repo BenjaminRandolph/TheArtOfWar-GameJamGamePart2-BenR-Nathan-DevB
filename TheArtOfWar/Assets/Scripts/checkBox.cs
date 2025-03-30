@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class settingsButtonMain : MonoBehaviour
+public class checkBox : MonoBehaviour
 {
 
     public bool clicked = false;
-    public void openSettings(){
+    public void UDM(){
 
         clicked = true;
 
