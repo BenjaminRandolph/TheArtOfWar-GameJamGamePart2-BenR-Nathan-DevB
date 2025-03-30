@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: ceabd1dfe75cdce4d8d81cf455302be0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1844200638445240926
+    second: upsidedownModeAsset1_0
+  - first:
+      213: -6870137100689385966
+    second: upsidedownModeAsset1_1
+  - first:
+      213: -4550821180340408394
+    second: upsidedownModeAsset1_2
+  - first:
+      213: -1011259305353189291
+    second: upsidedownModeAsset1_3
+  - first:
+      213: 5662673842509484722
+    second: upsidedownModeAsset1_4
+  - first:
+      213: 5442705757522898672
+    second: upsidedownModeAsset1_5
+  - first:
+      213: -5746398183952124124
+    second: upsidedownModeAsset1_6
+  - first:
+      213: -2928824359096941749
+    second: upsidedownModeAsset1_7
+  - first:
+      213: 8820393201786980849
+    second: upsidedownModeAsset1_8
+  - first:
+      213: 2775214231247000530
+    second: upsidedownModeAsset1_9
+  - first:
+      213: 2129628133928292155
+    second: upsidedownModeAsset1_10
+  - first:
+      213: -4786348295705212996
+    second: upsidedownModeAsset1_11
+  - first:
+      213: 470177909929434665
+    second: upsidedownModeAsset1_12
+  - first:
+      213: -2336272703023506116
+    second: upsidedownModeAsset1_13
+  - first:
+      213: 9200775359938320183
+    second: upsidedownModeAsset1_14
+  - first:
+      213: 8841563190854967247
+    second: upsidedownModeAsset1_15
+  - first:
+      213: 3361054682432963016
+    second: upsidedownModeAsset1_16
+  - first:
+      213: 810242916533050697
+    second: upsidedownModeAsset1_17
+  - first:
+      213: -6579969593923991219
+    second: upsidedownModeAsset1_18
+  - first:
+      213: -7086054132211062017
+    second: upsidedownModeAsset1_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1186
+        width: 303
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52c31da5bae79910800000000000000
+      internalID: 1844200638445240926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_1
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1083
+        width: 254
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2165d2bd4be58a0a0800000000000000
+      internalID: -6870137100689385966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_2
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1410
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf6c7d6f3c38d0c0800000000000000
+      internalID: -4550821180340408394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_3
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1310
+        width: 124
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5586d98050947f1f0800000000000000
+      internalID: -1011259305353189291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_4
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 1089
+        width: 306
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b29cad8bdbd59e40800000000000000
+      internalID: 5662673842509484722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_5
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 1002
+        width: 331
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe202ebc00688b40800000000000000
+      internalID: 5442705757522898672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_6
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 1008
+        width: 571
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42775932c41b040b0800000000000000
+      internalID: -5746398183952124124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1008
+        width: 254
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43048253c9ba57d0800000000000000
+      internalID: -2928824359096941749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_8
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1096
+        width: 125
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f988c372e4586a70800000000000000
+      internalID: 8820393201786980849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_9
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 1068
+        width: 299
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3161db3aa838620800000000000000
+      internalID: 2775214231247000530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_10
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1240
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3f497a2185fd8d10800000000000000
+      internalID: 2129628133928292155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_11
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 1081
+        width: 337
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7c13f8599739db0800000000000000
+      internalID: -4786348295705212996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_12
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 1033
+        width: 218
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e54966158668600800000000000000
+      internalID: 470177909929434665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_13
+      rect:
+        serializedVersion: 2
+        x: 3551
+        y: 996
+        width: 254
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d97ddca54e39fd0800000000000000
+      internalID: -2336272703023506116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_14
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 415
+        width: 771
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7375a4b2178bfaf70800000000000000
+      internalID: 9200775359938320183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_15
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 460
+        width: 261
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf5412a0ea83ba70800000000000000
+      internalID: 8841563190854967247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_16
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 467
+        width: 401
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c184111d6dd4ae20800000000000000
+      internalID: 3361054682432963016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_17
+      rect:
+        serializedVersion: 2
+        x: 3077
+        y: 800
+        width: 164
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d9ab5c3af8e3b00800000000000000
+      internalID: 810242916533050697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_18
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 448
+        width: 338
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d490a4934804fa4a0800000000000000
+      internalID: -6579969593923991219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upsidedownModeAsset1_19
+      rect:
+        serializedVersion: 2
+        x: 3045
+        y: 394
+        width: 194
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffaee5e6f4749ad90800000000000000
+      internalID: -7086054132211062017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
