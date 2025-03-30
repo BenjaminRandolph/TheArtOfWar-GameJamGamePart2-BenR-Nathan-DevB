@@ -64,8 +64,15 @@ public class GameManager : MonoBehaviour
                 exitButtonMain.SetActive(false);
                 settingsButtonMain.SetActive(false);
                 mainMenu.SetActive(false);
-
                 stage.SetActive(true);
+                playButtonMain.GetComponent<playButtonMain>().clicked = false;
+
+            }
+            
+            if(exitButtonMain.GetComponent<exitButtonMain>().clicked){
+
+                exitButtonMain.GetComponent<exitButtonMain>().clicked = false;
+                Application.Quit();
 
             }
 
@@ -94,6 +101,24 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(false);
                 pauseMenuActive = false;
                 playButton.GetComponent<playButton>().clicked = false;
+
+            }
+
+            if(pauseMenuActive && exitButton.GetComponent<exitButton>().clicked){
+
+                playButton.SetActive(false);
+                exitButton.SetActive(false);
+                settingsButton.SetActive(false);
+                pauseMenu.SetActive(false);
+                stage.SetActive(false);
+                pauseMenuActive = false;
+                exitButton.GetComponent<exitButton>().clicked = false;
+                
+                mainMenuActive = true;
+                playButtonMain.SetActive(true);
+                exitButtonMain.SetActive(true);
+                settingsButtonMain.SetActive(true);
+                mainMenu.SetActive(true);
 
             }
 
