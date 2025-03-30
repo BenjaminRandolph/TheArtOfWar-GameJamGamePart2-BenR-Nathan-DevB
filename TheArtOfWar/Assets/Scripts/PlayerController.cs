@@ -13,9 +13,13 @@ public class PlayerController : MonoBehaviour
     // how far the player can jump
     [SerializeField]
     private float jumpForce = 10.0f;
+    // bool that stores whether the player can jump or not (whether they are standing on something)
     [SerializeField]
     private bool grounded = false;
+    // whether the player can actually move or attack (so that we can disable their actions while they are already attacking)
     private bool canMoveOrAttack = true;
+    // stores the direction that the player last tried to move
+    private string lastDirectionMoved = "right";
 
     // ** Attacks **
     // how much damage they do to other players
@@ -42,6 +46,9 @@ public class PlayerController : MonoBehaviour
     // stores whether we have already hit the enemy for this attack
     [SerializeField]
     private bool repeatHit = false;
+    // base knockback for attacks (this is multiplied by a fourth of the attack damage done)
+    [SerializeField]
+    private float baseKnockback = 2.0f;
 
     // ** Health **
     // how much damage they can take in total
@@ -65,11 +72,12 @@ public class PlayerController : MonoBehaviour
     // ** Objects To Include **
     // the rigidbody of our player
     private Rigidbody2D rb;
-    // I'm not going to explain these lol
+    // This is used to find the size of the player in units (which for some reason it stores but the gameobject doesn't)
     private SpriteRenderer thingThatLetsMeFindTheSizeOfTheObject;
+    // object to store the result of the raycast to check for ground
     private RaycastHit2D hit;
+    // the object to store the size of the player from the SpriteRenderer
     private Vector2 size;
-    private Vector2 currentPositionModified;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -81,7 +89,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // use the size of the player to get the right offset for how long to make the ray in the raycast
         size = thingThatLetsMeFindTheSizeOfTheObject.bounds.size;
+        // shoot out a ray to find whether the player is actually touching the ground 
         hit = Physics2D.Raycast(transform.position, new Vector2(0, -1), size.y/2 + 0.1f);
 
         // ground check
@@ -91,19 +101,24 @@ public class PlayerController : MonoBehaviour
             grounded = false;
         }
 
-        // need ground raycast
+        // check if the player wants to jump
         if( Input.GetKeyDown(jump) && grounded && canMoveOrAttack ){
             Jump();
         }
 
+        // check if the player wants to move left
         if( Input.GetKey(left) && canMoveOrAttack ){
+            lastDirectionMoved = "left";
             Move(-increment);
         }
 
+        // check if the player wants to move right
         if( Input.GetKey(right) && canMoveOrAttack ){
+            lastDirectionMoved = "right";
             Move(increment);
         }
 
+        // check if the player wants to attack
         if( Input.GetKeyDown(attackRegular) && canMoveOrAttack ){
             IEnumerator coroutineToRun = AttackFreeze(freezeTime);
             StartCoroutine(coroutineToRun);
@@ -111,19 +126,17 @@ public class PlayerController : MonoBehaviour
 
             if(Input.GetKey(up)){
                 previousAttackDirection = "up";
-                Attack("up");
             }else if(Input.GetKey(down)){
                 previousAttackDirection = "down";
-                Attack("down");
-            }else if( Input.GetKey(left) || ( !Input.GetKey(right) && (rb.linearVelocityX < 0.0f) ) ){
+            }else if( Input.GetKey(left) || lastDirectionMoved == "left" ){
                 previousAttackDirection = "left";
-                Attack("left");
             }else{
                 previousAttackDirection = "right";
-                Attack("right");
             }
         }
 
+        // the attack should continue to check for something to damage when in the damaging phase of the attack
+        // later it does also check to make sure that the thing it hit won't take damage any more than once in a single attack
         if(canDoDamage){
             Attack(previousAttackDirection);
         }
@@ -151,43 +164,50 @@ public class PlayerController : MonoBehaviour
     private void Attack(string direction){
         Debug.Log("attacking in this direction: " + direction);
 
+        Vector2 modifiedPosition = transform.position;
         Vector2 directionVector;
         if(direction == "up"){
             directionVector = new Vector2(0, 1);
         }else if(direction == "down"){
-            directionVector = new Vector2(0, -1);
+            if(grounded){
+                if(lastDirectionMoved == "left"){
+                    directionVector = new Vector2(-1, 0);
+                }else{
+                    directionVector = new Vector2(1, 0);
+                }
+                
+                modifiedPosition.y = modifiedPosition.y - size.y / 4;
+            }else{
+                directionVector = new Vector2(0, -1);
+            }
         }else if(direction == "left"){
             directionVector = new Vector2(-1, 0);
         }else{
             directionVector = new Vector2(1, 0);
         }
 
-        /*
-        int layerForRaycast = 6;
-        if(this.gameObject.layer == 7){
-            layerForRaycast = 7;
-        }
-        */
 
         RaycastHit2D hit2;
-        hit2 = Physics2D.Raycast(transform.position, directionVector, rangeOfAttack);
+        hit2 = Physics2D.Raycast(modifiedPosition, directionVector, rangeOfAttack);
 
         if(hit2 && !repeatHit){
             Debug.Log("Hit something!" + hit2.collider.gameObject.name);
             hit2.collider.gameObject.GetComponent<PlayerController>().TakeDamage(baseAttackDamage);
-            hit2.collider.gameObject.GetComponent<Rigidbody2D>().linearVelocityX += 2.0f;
-            hit2.collider.gameObject.GetComponent<Rigidbody2D>().linearVelocityY += 2.0f;
+            hit2.collider.gameObject.GetComponent<Rigidbody2D>().linearVelocityX += baseKnockback * baseAttackDamage / 4;
+            hit2.collider.gameObject.GetComponent<Rigidbody2D>().linearVelocityY += baseKnockback * baseAttackDamage / 4;
             Debug.Log("did damage to it!");
             repeatHit = true;
         }
     }
 
+    // coroutine to freeze the players actions for a time
     IEnumerator AttackFreeze(float timeToWait){
         canMoveOrAttack = false;
         yield return new WaitForSeconds(timeToWait);
         canMoveOrAttack = true;
     }
 
+    // coroutine to let the attack do damage for a certain period of time
     IEnumerator AttackDamageChange(){
         canDoDamage = false;
         yield return new WaitForSeconds(startAttackLag);
