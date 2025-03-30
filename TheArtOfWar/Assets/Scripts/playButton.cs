@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class playButton : MonoBehaviour
 {
+    public bool clicked = false;
     public void closePauseMenu(){
 
-        this.gameObject.SetActive(false);
-        print("it worked");
+        clicked = true;
+
     }
 }
