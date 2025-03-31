@@ -25,5 +25,10 @@ Status: Bugged
 
 TO FIX: 
 Animations generally bugged and incorrect
+    - Stick Man
+    - Idle Animations 
+    - Animation speed tweaking
+    - Add conditionals and correct frame order to Animations
+
 Figure out why some images and backrounds are blurry?
-maybe make the fade out a bit faster?
+maybe make the logo fade out a bit faster?
