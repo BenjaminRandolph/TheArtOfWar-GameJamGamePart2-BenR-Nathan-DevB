@@ -81,6 +81,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject p2;
 
+    [SerializeField]
+    GameObject p1WinScreen;
+
+    [SerializeField]
+    GameObject p2WinScreen;
+
     bool mainMenuActive = true;
 
     bool pauseMenuActive = false;
@@ -122,6 +128,9 @@ public class GameManager : MonoBehaviour
         UDMcheckBox.SetActive(false);
         UDMcheck.SetActive(false);
         backButton.SetActive(false);
+
+        p1WinScreen.SetActive(false);
+        p2WinScreen.SetActive(false);
 
         stage.SetActive(false);
         p1HealthText.SetActive(false);
@@ -246,8 +255,7 @@ public class GameManager : MonoBehaviour
                 rightArrow1.SetActive(false);
                 rightArrow2.SetActive(false);
 
-                p1HealthText.SetActive(false);
-                p2HealthText.SetActive(false);
+                selectorPlayButton.SetActive(false);
                 
                 playButton.SetActive(true);
                 exitButton.SetActive(true);
@@ -269,6 +277,7 @@ public class GameManager : MonoBehaviour
                     leftArrow2.SetActive(true);
                     rightArrow1.SetActive(true);
                     rightArrow2.SetActive(true);
+                    selectorPlayButton.SetActive(true);
 
                 }
 
@@ -278,9 +287,6 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(false);
                 pauseMenuActive = false;
                 playButton.GetComponent<playButton>().clicked = false;
-
-                p1HealthText.SetActive(true);
-                p2HealthText.SetActive(true);
 
                 Time.timeScale = 1;
 
@@ -382,6 +388,23 @@ public class GameManager : MonoBehaviour
 
             p1HealthText.GetComponent<healthText>().setText("Health: " + p1.GetComponent<PlayerController>().health);
             p2HealthText.GetComponent<healthText>().setText("Health: " + p2.GetComponent<PlayerController>().health);
+
+            if(p1.GetComponent<PlayerController>().health <= 0){
+
+                stage.SetActive(false);
+                p1HealthText.SetActive(false);
+                p2HealthText.SetActive(false);
+                p2WinScreen.SetActive(true);
+
+            }
+            else if(p2.GetComponent<PlayerController>().health <= 0){
+
+                stage.SetActive(false);
+                p1HealthText.SetActive(false);
+                p2HealthText.SetActive(false);
+                p1WinScreen.SetActive(true);
+
+            }
 
         }
 

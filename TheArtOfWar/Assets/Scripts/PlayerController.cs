@@ -242,11 +242,9 @@ public class PlayerController : MonoBehaviour
         health -= damageToTake;
         damage = true;
         if(health < 0){
-            Die();
+
+            health = 0;
+
         }
-    }
-
-    private void Die(){
-
     }
 }
