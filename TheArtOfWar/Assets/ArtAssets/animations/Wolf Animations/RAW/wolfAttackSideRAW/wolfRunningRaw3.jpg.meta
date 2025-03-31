@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolfRunningRaw3_0: -6349793594751895872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

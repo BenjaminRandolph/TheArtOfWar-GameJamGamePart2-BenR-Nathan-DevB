@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolfAttackSide1_0: -6547818479302751207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

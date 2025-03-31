@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolfAA3_0: -2388592217737782441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

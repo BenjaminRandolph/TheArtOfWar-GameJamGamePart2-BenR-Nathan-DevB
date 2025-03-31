@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolfJumpingRaw4_0: -8234433959691543820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

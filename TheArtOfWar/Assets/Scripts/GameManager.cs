@@ -51,6 +51,30 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject backButton;
 
+    [SerializeField]
+    GameObject leftArrow1;
+
+    [SerializeField]
+    GameObject leftArrow2;
+
+    [SerializeField]
+    GameObject rightArrow1;
+
+    [SerializeField]
+    GameObject rightArrow2;
+
+    [SerializeField]
+    GameObject characterSelector;
+
+    [SerializeField]
+    GameObject selectorPlayButton;
+
+    [SerializeField]
+    GameObject p1HealthText;
+
+    [SerializeField]
+    GameObject p2HealthText;
+
     bool mainMenuActive = true;
 
     bool pauseMenuActive = false;
@@ -59,17 +83,29 @@ public class GameManager : MonoBehaviour
 
     bool settingsMenuActive = false;
 
+    bool selectorActive = false;
+
+    int p1Health = 100;
+
+    int p2Health = 100;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
 
         blackBackground.SetActive(true);
         studioLogo.SetActive(true);
 
-
         playButtonMain.SetActive(true);
         exitButtonMain.SetActive(true);
         settingsButtonMain.SetActive(true);
         mainMenu.SetActive(true);
+
+        characterSelector.SetActive(false);
+        leftArrow1.SetActive(false);
+        leftArrow2.SetActive(false);
+        rightArrow1.SetActive(false);
+        rightArrow2.SetActive(false);
+        selectorPlayButton.SetActive(false);
 
         playButton.SetActive(false);
         exitButton.SetActive(false);
@@ -82,6 +118,8 @@ public class GameManager : MonoBehaviour
         backButton.SetActive(false);
 
         stage.SetActive(false);
+        p1HealthText.SetActive(false);
+        p2HealthText.SetActive(false);
 
     }
 
@@ -106,15 +144,22 @@ public class GameManager : MonoBehaviour
         
         if(mainMenuActive){ // Main Menu
 
-            if(playButtonMain.GetComponent<playButtonMain>().clicked){
+            if(playButtonMain.GetComponent<playButtonMain>().clicked){  // Character Selector
 
                 mainMenuActive = false;
                 playButtonMain.SetActive(false);
                 exitButtonMain.SetActive(false);
                 settingsButtonMain.SetActive(false);
                 mainMenu.SetActive(false);
-                stage.SetActive(true);
                 playButtonMain.GetComponent<playButtonMain>().clicked = false;
+
+                characterSelector.SetActive(true);
+                leftArrow1.SetActive(true);
+                leftArrow2.SetActive(true);
+                rightArrow1.SetActive(true);
+                rightArrow2.SetActive(true);
+                selectorPlayButton.SetActive(true);
+                selectorActive = true;
 
             }
             
@@ -189,6 +234,15 @@ public class GameManager : MonoBehaviour
             // The pause menu is open, play and esc can close it
             if(!pauseMenuActive && !settingsMenuActive && Input.GetKeyDown("escape")){
 
+                characterSelector.SetActive(false);
+                leftArrow1.SetActive(false);
+                leftArrow2.SetActive(false);
+                rightArrow1.SetActive(false);
+                rightArrow2.SetActive(false);
+
+                p1HealthText.SetActive(false);
+                p2HealthText.SetActive(false);
+                
                 playButton.SetActive(true);
                 exitButton.SetActive(true);
                 settingsButton.SetActive(true);
@@ -202,12 +256,25 @@ public class GameManager : MonoBehaviour
             // The pause menu is closed, esc can open it
             else if(pauseMenuActive && !settingsMenuActive && (playButton.GetComponent<playButton>().clicked || Input.GetKeyDown("escape"))){
                 
+                if(selectorActive){
+
+                    characterSelector.SetActive(true);
+                    leftArrow1.SetActive(true);
+                    leftArrow2.SetActive(true);
+                    rightArrow1.SetActive(true);
+                    rightArrow2.SetActive(true);
+
+                }
+
                 playButton.SetActive(false);
                 exitButton.SetActive(false);
                 settingsButton.SetActive(false);
                 pauseMenu.SetActive(false);
                 pauseMenuActive = false;
                 playButton.GetComponent<playButton>().clicked = false;
+
+                p1HealthText.SetActive(true);
+                p2HealthText.SetActive(true);
 
                 Time.timeScale = 1;
 
@@ -287,6 +354,23 @@ public class GameManager : MonoBehaviour
                 backButton.SetActive(false);
                 UDMcheck.SetActive(false);
                 settingsMenuActive = false;
+
+            }
+
+            if(selectorPlayButton.GetComponent<selectorPlayButton>().clicked){  // Start Game
+
+                selectorPlayButton.GetComponent<selectorPlayButton>().clicked = false;
+                characterSelector.SetActive(false);
+                leftArrow1.SetActive(false);
+                leftArrow2.SetActive(false);
+                rightArrow1.SetActive(false);
+                rightArrow2.SetActive(false);
+                selectorPlayButton.SetActive(false);
+                selectorActive = false;
+
+                stage.SetActive(true);
+                p1HealthText.SetActive(true);
+                p2HealthText.SetActive(true);
 
             }
 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolfDeathRAW1_0: -294896471086670766
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

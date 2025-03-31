@@ -18,19 +18,16 @@ public class charSwitch : MonoBehaviour
             char1.SetActive(true);
             char2.SetActive(false);
             char3.SetActive(false);
-            Debug.Log("counter 1");
         }
         if (counter == 2) {
             char1.SetActive(false);
             char2.SetActive(true);
             char3.SetActive(false);
-            Debug.Log("counter 2");
         }
         if (counter == 3) {
             char1.SetActive(false);
             char2.SetActive(false);
             char3.SetActive(true);
-            Debug.Log("counter3");
         }
 
         
@@ -39,9 +36,36 @@ public class charSwitch : MonoBehaviour
             char1.SetActive(true);
             char2.SetActive(false);
             char3.SetActive(false);
-            Debug.Log("Reset to 1");
         }
         counter++;
+    }
+
+    public void switchCharBack()
+    {
+        if (counter == 1) {
+            char1.SetActive(true);
+            char2.SetActive(false);
+            char3.SetActive(false);
+        }
+        if (counter == 2) {
+            char1.SetActive(false);
+            char2.SetActive(true);
+            char3.SetActive(false);
+        }
+        if (counter == 3) {
+            char1.SetActive(false);
+            char2.SetActive(false);
+            char3.SetActive(true);
+        }
+
+        
+        if (counter <= 0) {
+            counter = 3;
+            char1.SetActive(false);
+            char2.SetActive(false);
+            char3.SetActive(true);
+        }
+        counter--;
     }
 }
 
