@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // use the size of the player to get the right offset for how long to make the ray in the raycast
-        size = thingThatLetsMeFindTheSizeOfTheObject.bounds.size;
+        size = thingThatLetsMeFindTheSizeOfTheObject.bounds.size; // 1.95 usually for the base square
         // shoot out a ray to find whether the player is actually touching the ground 
         hit = Physics2D.Raycast(transform.position, new Vector2(0, -1), size.y/2 + 0.1f);
 
@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
         // the attack should continue to check for something to damage when in the damaging phase of the attack
         // later it does also check to make sure that the thing it hit won't take damage any more than once in a single attack
         if(canDoDamage){
+            //Debug.Log(previousAttackDirection);
             Attack(previousAttackDirection);
         }
     }
@@ -162,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
     // make the player attack
     private void Attack(string direction){
-        Debug.Log("attacking in this direction: " + direction);
+        //Debug.Log("attacking in this direction: " + direction);
 
         Vector2 modifiedPosition = transform.position;
         Vector2 directionVector;
@@ -191,8 +192,17 @@ public class PlayerController : MonoBehaviour
         hit2 = Physics2D.Raycast(modifiedPosition, directionVector, rangeOfAttack);
 
         if(hit2 && !repeatHit){
-            Debug.Log("Hit something!" + hit2.collider.gameObject.name);
-            hit2.collider.gameObject.GetComponent<PlayerController>().TakeDamage(baseAttackDamage);
+            Debug.Log("Hit something! " + hit2.collider.gameObject.name);
+            if(hit2.collider.gameObject.GetComponent<PlayerController>() != null){
+                hit2.collider.gameObject.GetComponent<PlayerController>().TakeDamage(baseAttackDamage);
+            }else if(hit2.collider.gameObject.GetComponent<PlayerController>() != null){
+                hit2.collider.gameObject.GetComponent<PlayerControllerWolf>().TakeDamage(baseAttackDamage);
+            }else if(hit2.collider.gameObject.GetComponent<PlayerControllerRobot>() != null){
+                hit2.collider.gameObject.GetComponent<PlayerControllerRobot>().TakeDamage(baseAttackDamage);
+            }else if(hit2.collider.gameObject.GetComponent<PlayerControllerStick>()){
+                hit2.collider.gameObject.GetComponent<PlayerControllerStick>().TakeDamage(baseAttackDamage);
+            }
+            
             Rigidbody2D hitRB = hit2.collider.gameObject.GetComponent<Rigidbody2D>();
 
             if( hit2.transform.position.x < transform.position.x ){
