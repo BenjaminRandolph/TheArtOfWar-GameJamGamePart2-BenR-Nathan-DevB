@@ -32,3 +32,4 @@ Animations generally bugged and incorrect
 
 Figure out why some images and backrounds are blurry?
 maybe make the logo fade out a bit faster?
+Add Sfx (and music)
