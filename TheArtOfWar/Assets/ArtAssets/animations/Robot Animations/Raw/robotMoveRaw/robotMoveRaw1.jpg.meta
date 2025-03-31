@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      robotMoveRaw1_0: 3630577615343213384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

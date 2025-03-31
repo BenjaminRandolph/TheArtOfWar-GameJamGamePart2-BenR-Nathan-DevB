@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f0653187d19e02b4e816fd91cbee2b74
+guid: d7a19908a1a5cae469ddfdda0f6bb0a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8524750682721620910
-    second: robotDamage3_0
+      213: 5503113648257459539
+    second: wolfDamage1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robotDamage3_0
+      name: wolfDamage1_0
       rect:
         serializedVersion: 2
-        x: 843
-        y: 26
-        width: 2104
-        height: 2103
+        x: 43
+        y: 30
+        width: 3755
+        height: 2095
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea31462749ffd4670800000000000000
-      internalID: 8524750682721620910
+      spriteID: 3556df2d4bcfe5c40800000000000000
+      internalID: 5503113648257459539
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      robotDamage3_0: 8524750682721620910
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
