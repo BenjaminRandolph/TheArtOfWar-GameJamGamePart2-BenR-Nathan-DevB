@@ -262,6 +262,8 @@ public class GameManager : MonoBehaviour
                 settingsButton.SetActive(true);
                 pauseMenu.SetActive(true);
                 pauseMenuActive = true;
+                p1HealthText.SetActive(false);
+                p2HealthText.SetActive(false);
 
                 Time.timeScale = 0;
 
@@ -278,6 +280,14 @@ public class GameManager : MonoBehaviour
                     rightArrow1.SetActive(true);
                     rightArrow2.SetActive(true);
                     selectorPlayButton.SetActive(true);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+
+                }
+                else{
+
+                    p1HealthText.SetActive(true);
+                    p2HealthText.SetActive(true);
 
                 }
 
