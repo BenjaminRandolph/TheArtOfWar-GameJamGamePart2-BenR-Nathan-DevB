@@ -53,7 +53,7 @@ public class PlayerControllerStick : MonoBehaviour
     // ** Health **
     // how much damage they can take in total
     [SerializeField]
-    private int health = 100;
+    public int health = 100;
 
     // ** Keys to Watch For Input **
     [SerializeField]

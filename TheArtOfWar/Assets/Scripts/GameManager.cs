@@ -75,10 +75,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject p2HealthText;
 
-    [SerializeField]
     GameObject p1;
 
-    [SerializeField]
     GameObject p2;
 
     [SerializeField]
@@ -86,6 +84,42 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject p2WinScreen;
+
+    [SerializeField]
+    GameObject box1;
+
+    [SerializeField]
+    GameObject box2;
+
+    [SerializeField]
+    GameObject tri1;
+
+    [SerializeField]
+    GameObject tri2;
+
+    [SerializeField]
+    GameObject star1;
+
+    [SerializeField]
+    GameObject star2;
+
+    [SerializeField]
+    GameObject wolf1;
+
+    [SerializeField]
+    GameObject wolf2;
+
+    [SerializeField]
+    GameObject robot1;
+
+    [SerializeField]
+    GameObject robot2;
+
+    [SerializeField]
+    GameObject sm1;
+
+    [SerializeField]
+    GameObject sm2;
 
     bool mainMenuActive = true;
 
@@ -379,6 +413,13 @@ public class GameManager : MonoBehaviour
 
             }
 
+            bool wolf1bool = false;
+            bool wolf2bool = false;
+            bool robot1bool = false;
+            bool robot2bool = false;
+            bool sm1bool = false;
+            bool sm2bool = false;
+
             if(selectorPlayButton.GetComponent<selectorPlayButton>().clicked){  // Start Game
 
                 selectorPlayButton.GetComponent<selectorPlayButton>().clicked = false;
@@ -390,32 +431,99 @@ public class GameManager : MonoBehaviour
                 selectorPlayButton.SetActive(false);
                 selectorActive = false;
 
+                
+                if(box1.activeSelf){
+                    p1 = Instantiate(wolf1, new Vector3(-2, 0, 0),  Quaternion.identity);
+                    wolf1bool = true;
+                }else if(tri1.activeSelf){
+                    p1 = Instantiate(sm1, new Vector3(-2, 0, 0),  Quaternion.identity);
+                    sm1bool = true;
+                }else{
+                    p1 = Instantiate(robot1, new Vector3(-2, 0, 0),  Quaternion.identity);
+                    robot1bool = true;
+                }
+
+                if(box2.activeSelf){
+                    p2 = Instantiate(wolf2, new Vector3(2, 0, 0),  Quaternion.identity);
+                    wolf2bool = true;
+                }else if(tri2.activeSelf){
+                    p2 = Instantiate(sm2, new Vector3(2, 0, 0),  Quaternion.identity);
+                    sm2bool = true;
+                }else{
+                    p2 = Instantiate(robot2, new Vector3(2, 0, 0),  Quaternion.identity);
+                    robot2bool = true;
+                }
+                
+
                 stage.SetActive(true);
                 p1HealthText.SetActive(true);
                 p2HealthText.SetActive(true);
 
             }
 
-            p1HealthText.GetComponent<healthText>().setText("Health: " + p1.GetComponent<PlayerController>().health);
-            p2HealthText.GetComponent<healthText>().setText("Health: " + p2.GetComponent<PlayerController>().health);
+            if(wolf1bool){
+                p1HealthText.GetComponent<healthText>().setText("Health: " + p1.GetComponent<PlayerControllerWolf>().health);
+                if(p1.GetComponent<PlayerControllerWolf>().health <= 0){
 
-            if(p1.GetComponent<PlayerController>().health <= 0){
+                    stage.SetActive(false);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+                    p2WinScreen.SetActive(true);
 
-                stage.SetActive(false);
-                p1HealthText.SetActive(false);
-                p2HealthText.SetActive(false);
-                p2WinScreen.SetActive(true);
+                }
+            }else if(sm1bool){
+                p1HealthText.GetComponent<healthText>().setText("Health: " + p1.GetComponent<PlayerControllerStick>().health);
+                if(p1.GetComponent<PlayerControllerStick>().health <= 0){
 
+                    stage.SetActive(false);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+                    p2WinScreen.SetActive(true);
+
+                }
+            }else{
+                p1HealthText.GetComponent<healthText>().setText("Health: " + p1.GetComponent<PlayerControllerRobot>().health);
+                if(p1.GetComponent<PlayerControllerRobot>().health <= 0){
+
+                    stage.SetActive(false);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+                    p2WinScreen.SetActive(true);
+
+                }
             }
-            else if(p2.GetComponent<PlayerController>().health <= 0){
 
-                stage.SetActive(false);
-                p1HealthText.SetActive(false);
-                p2HealthText.SetActive(false);
-                p1WinScreen.SetActive(true);
+            if(wolf2bool){
+                p2HealthText.GetComponent<healthText>().setText("Health: " + p2.GetComponent<PlayerControllerWolf>().health);
+                if(p2.GetComponent<PlayerControllerWolf>().health <= 0){
 
+                    stage.SetActive(false);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+                    p1WinScreen.SetActive(true);
+
+                }
+            }else if(sm2bool){
+                p2HealthText.GetComponent<healthText>().setText("Health: " + p2.GetComponent<PlayerControllerStick>().health);
+                if(p2.GetComponent<PlayerControllerStick>().health <= 0){
+
+                    stage.SetActive(false);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+                    p1WinScreen.SetActive(true);
+
+                }
+            }else{
+                p2HealthText.GetComponent<healthText>().setText("Health: " + p2.GetComponent<PlayerControllerRobot>().health);
+                if(p2.GetComponent<PlayerControllerRobot>().health <= 0){
+
+                    stage.SetActive(false);
+                    p1HealthText.SetActive(false);
+                    p2HealthText.SetActive(false);
+                    p1WinScreen.SetActive(true);
+
+                }
             }
-
         }
 
     }

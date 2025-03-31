@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      smAriealAttackRaw3_0: -2599502185794456172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
