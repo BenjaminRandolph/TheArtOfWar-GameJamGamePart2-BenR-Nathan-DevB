@@ -1,0 +1,29 @@
+Bug: Can Generate multiple characters in areana
+Reproduce: play a game, then pause, exit, then play again.
+Status: Bugged
+
+Bug: Player 2 sometimes shows through pause menu in areana
+Reproduce: Play a game, then pause and unpause multiple times until it bugs
+Status: Bugged
+
+Bug: Player 1 and player 2 cannot damage eachother
+Reproduce: Play a game, then try to use attack
+Status: Bugged
+
+Bug: Stickman Animations invisible
+Reproduce: Select stickman in character selector, Play game
+Status: Bugged
+
+Bug: When Player 1 jumps ontop of player 2, player 1 cannot move, this may apply to both players. 
+Reproduce: Play a game, Jump ontop of player
+Status: bugged
+
+Bug: Robot player Cannot move side to side
+Reproduce: Play a game selecting robot character at character sceen, play game, try to input
+left or right inputs on their own
+Status: Bugged
+
+TO FIX: 
+Animations generally bugged and incorrect
+Figure out why some images and backrounds are blurry?
+maybe make the fade out a bit faster?
