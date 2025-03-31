@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d7a19908a1a5cae469ddfdda0f6bb0a8
+guid: 5fc8a52d7f24bd24683d38a65d93fba8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5503113648257459539
-    second: wolfDamage1_0
+      213: -432422396471003215
+    second: smJump3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wolfDamage1_0
+      name: smJump3_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 30
-        width: 3755
-        height: 2095
+        x: 0
+        y: 0
+        width: 3000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3556df2d4bcfe5c40800000000000000
-      internalID: 5503113648257459539
+      spriteID: 1b73c691f1abff9f0800000000000000
+      internalID: -432422396471003215
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      wolfDamage1_0: 5503113648257459539
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

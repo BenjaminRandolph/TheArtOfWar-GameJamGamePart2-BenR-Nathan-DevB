@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 334702cf0e683f046ab25723d82188a9
+guid: 8d4fc6640e98c1643a4e2730a734ce94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4841423811546620764
-    second: robotAAdown2_0
+      213: -2130920523993700116
+    second: smAriealAttackRaw1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robotAAdown2_0
+      name: smAriealAttackRaw1_0
       rect:
         serializedVersion: 2
-        x: 1129
+        x: 0
         y: 0
-        width: 1590
-        height: 1386
+        width: 3000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ac55a1c1becfccb0800000000000000
-      internalID: -4841423811546620764
+      spriteID: ce824c2d2137d62e0800000000000000
+      internalID: -2130920523993700116
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      robotAAdown2_0: -4841423811546620764
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
