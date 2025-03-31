@@ -75,6 +75,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject p2HealthText;
 
+    [SerializeField]
+    GameObject p1;
+
+    [SerializeField]
+    GameObject p2;
+
     bool mainMenuActive = true;
 
     bool pauseMenuActive = false;
@@ -373,6 +379,9 @@ public class GameManager : MonoBehaviour
                 p2HealthText.SetActive(true);
 
             }
+
+            p1HealthText.GetComponent<healthText>().setText("Health: " + p1.GetComponent<PlayerController>().health);
+            p2HealthText.GetComponent<healthText>().setText("Health: " + p2.GetComponent<PlayerController>().health);
 
         }
 

@@ -786,7 +786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7949329370625264757, guid: 9c2c645a58a46fd47a3e59410640467b, type: 3}
+  m_Sprite: {fileID: 5477246203589246185, guid: eb75c5063dedf7e42bd037fef6510628, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2945,6 +2945,7 @@ GameObject:
   - component: {fileID: 1250034705}
   - component: {fileID: 1250034707}
   - component: {fileID: 1250034706}
+  - component: {fileID: 1250034708}
   m_Layer: 5
   m_Name: Player 2 Health
   m_TagString: Untagged
@@ -3070,6 +3071,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250034704}
   m_CullTransparentMesh: 1
+--- !u!114 &1250034708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250034704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936f56f3ccb04014486ecb03bc6833b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255358910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,6 +3788,8 @@ MonoBehaviour:
   selectorPlayButton: {fileID: 613363351}
   p1HealthText: {fileID: 2063617667}
   p2HealthText: {fileID: 1250034704}
+  p1: {fileID: 1065162927}
+  p2: {fileID: 613269842}
 --- !u!1 &1418887214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3888,8 +3903,8 @@ Transform:
   m_GameObject: {fileID: 1448840109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalPosition: {x: 0.3938, y: 0.0606, z: 0}
+  m_LocalScale: {x: 1.3935087, y: 0.9529551, z: 0.65}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1046930595}
@@ -5505,6 +5520,7 @@ GameObject:
   - component: {fileID: 2063617668}
   - component: {fileID: 2063617670}
   - component: {fileID: 2063617669}
+  - component: {fileID: 2063617671}
   m_Layer: 5
   m_Name: Player 1 Health
   m_TagString: Untagged
@@ -5630,6 +5646,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063617667}
   m_CullTransparentMesh: 1
+--- !u!114 &2063617671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063617667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936f56f3ccb04014486ecb03bc6833b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5638,10 +5666,10 @@ SceneRoots:
   - {fileID: 18353069}
   - {fileID: 367996010}
   - {fileID: 1949078360}
+  - {fileID: 1775070149}
   - {fileID: 844499895}
   - {fileID: 1046930595}
   - {fileID: 1310822167}
   - {fileID: 2061235741}
   - {fileID: 100030725}
   - {fileID: 1574051521}
-  - {fileID: 1775070149}

@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     // ** Health **
     // how much damage they can take in total
     [SerializeField]
-    private int health = 100;
+    public int health = 100;
 
     // ** Keys to Watch For Input **
     [SerializeField]
@@ -78,6 +78,8 @@ public class PlayerController : MonoBehaviour
     private RaycastHit2D hit;
     // the object to store the size of the player from the SpriteRenderer
     private Vector2 size;
+
+    bool damage = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -228,6 +230,7 @@ public class PlayerController : MonoBehaviour
     // make the player recieve damage
     public void TakeDamage( int damageToTake){
         health -= damageToTake;
+        damage = true;
         if(health < 0){
             Die();
         }
