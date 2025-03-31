@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      robotDamage2_0: 7002420525027236573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

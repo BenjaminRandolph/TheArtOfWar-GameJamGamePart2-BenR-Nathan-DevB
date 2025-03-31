@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WolfAerialAttack
+  m_Name: WolfAerialAttack2
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,12 +21,8 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -885694816167009821, guid: 2917e8147503ae14e861238f1cb9f910, type: 3}
-    - time: 0.083333336
-      value: {fileID: 1243005120567725004, guid: 3d938b81144457047ab3f6855b3c6719, type: 3}
-    - time: 0.16666667
       value: {fileID: -2388592217737782441, guid: b6b0a5df7c2cd434a94d3423bb4d8d48, type: 3}
-    - time: 0.25
+    - time: 0.083333336
       value: {fileID: 5969279973177332909, guid: b743b9d0b0b01d04da7be49d9e08d391, type: 3}
     attribute: m_Sprite
     path: 
@@ -50,8 +46,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -885694816167009821, guid: 2917e8147503ae14e861238f1cb9f910, type: 3}
-    - {fileID: 1243005120567725004, guid: 3d938b81144457047ab3f6855b3c6719, type: 3}
     - {fileID: -2388592217737782441, guid: b6b0a5df7c2cd434a94d3423bb4d8d48, type: 3}
     - {fileID: 5969279973177332909, guid: b743b9d0b0b01d04da7be49d9e08d391, type: 3}
   m_AnimationClipSettings:
@@ -59,7 +53,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.16666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
