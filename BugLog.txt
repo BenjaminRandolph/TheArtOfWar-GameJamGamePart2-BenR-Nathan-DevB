@@ -2,7 +2,7 @@ Bug: Can Generate multiple characters in areana
 Reproduce: play a game, then pause, exit, then play again.
 Status: Bugged
 
-Bug: Player 2 sometimes shows through pause menu in areana
+Bug: Player may sometimes shows through pause menu in areana
 Reproduce: Play a game, then pause and unpause multiple times until it bugs
 Status: Bugged
 
