@@ -70,6 +70,8 @@ public class PlayerControllerRobot : MonoBehaviour
     private KeyCode attackRegular = KeyCode.G;
 
     // ** Objects To Include **
+    // the way we change the animation controller's parameters so it does different animations
+    private Animator animator;
     // the rigidbody of our player
     private Rigidbody2D rb;
     // This is used to find the size of the player in units (which for some reason it stores but the gameobject doesn't)
@@ -84,55 +86,82 @@ public class PlayerControllerRobot : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         thingThatLetsMeFindTheSizeOfTheObject = GetComponent<SpriteRenderer>();
+        animator = GameObject.Find("RobotAnimated").GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // use the size of the player to get the right offset for how long to make the ray in the raycast
-        size = thingThatLetsMeFindTheSizeOfTheObject.bounds.size;
         // shoot out a ray to find whether the player is actually touching the ground 
-        hit = Physics2D.Raycast(transform.position, new Vector2(0, -1), size.y/2 + 0.1f);
+        hit = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1.2f + 0.1f);
 
         // ground check
         if (hit){
             grounded = true;
+            //Debug.Log(hit.collider);
+            animator.SetBool("grounded", grounded);
         }else{
             grounded = false;
+            //Debug.Log("not ground");
+            animator.SetBool("grounded", grounded);
         }
 
         // check if the player wants to jump
         if( Input.GetKeyDown(jump) && grounded && canMoveOrAttack ){
+            animator.SetBool("jumping", true);
             Jump();
+        }else if( Input.GetKeyUp(jump) || !canMoveOrAttack ){
+            animator.SetBool("jumping", false);
         }
 
-        // check if the player wants to move left
-        if( Input.GetKey(left) && canMoveOrAttack ){
-            lastDirectionMoved = "left";
-            Move(-increment);
-        }
+        if( (Input.GetKey(left) || Input.GetKey(right)) && canMoveOrAttack ){
+            // check if the player wants to move left
+            if( Input.GetKey(left) && canMoveOrAttack ){
+                Vector3 scale = transform.localScale;
+                if( Mathf.Sign(scale.x) == -1 ){
+                    scale.x *= -1;
+                    transform.localScale = scale;
+                }
+                lastDirectionMoved = "left";
+                animator.SetBool("running", true);
+                Move(-increment);
+            }
 
-        // check if the player wants to move right
-        if( Input.GetKey(right) && canMoveOrAttack ){
-            lastDirectionMoved = "right";
-            Move(increment);
+            // check if the player wants to move right
+            if( Input.GetKey(right) && canMoveOrAttack ){
+                Vector3 scale = transform.localScale;
+                if( Mathf.Sign(scale.x) == 1 ){
+                    scale.x *= -1;
+                    transform.localScale = scale;
+                }
+                lastDirectionMoved = "right";
+                animator.SetBool("running", true);
+                Move(increment);
+            }
+        }else{
+            animator.SetBool("running", false);
         }
+        
 
         // check if the player wants to attack
         if( Input.GetKeyDown(attackRegular) && canMoveOrAttack ){
+            if(Input.GetKey(up)){
+                previousAttackDirection = "up";
+                animator.SetInteger("attackDirection", 1);
+            }else if(Input.GetKey(down)){
+                previousAttackDirection = "down";
+                animator.SetInteger("attackDirection", 2);
+            }else if( Input.GetKey(left) || lastDirectionMoved == "left" ){
+                previousAttackDirection = "left";
+                animator.SetInteger("attackDirection", 0);
+            }else{
+                previousAttackDirection = "right";
+                animator.SetInteger("attackDirection", 0);
+            }
+
             IEnumerator coroutineToRun = AttackFreeze(freezeTime);
             StartCoroutine(coroutineToRun);
             StartCoroutine("AttackDamageChange");
-
-            if(Input.GetKey(up)){
-                previousAttackDirection = "up";
-            }else if(Input.GetKey(down)){
-                previousAttackDirection = "down";
-            }else if( Input.GetKey(left) || lastDirectionMoved == "left" ){
-                previousAttackDirection = "left";
-            }else{
-                previousAttackDirection = "right";
-            }
         }
 
         // the attack should continue to check for something to damage when in the damaging phase of the attack
@@ -162,7 +191,7 @@ public class PlayerControllerRobot : MonoBehaviour
 
     // make the player attack
     private void Attack(string direction){
-        Debug.Log("attacking in this direction: " + direction);
+        //Debug.Log("attacking in this direction: " + direction);
 
         Vector2 modifiedPosition = transform.position;
         Vector2 directionVector;
@@ -192,17 +221,27 @@ public class PlayerControllerRobot : MonoBehaviour
 
         if(hit2 && !repeatHit){
             Debug.Log("Hit something!" + hit2.collider.gameObject.name);
-            hit2.collider.gameObject.GetComponent<PlayerController>().TakeDamage(baseAttackDamage);
-            Rigidbody2D hitRB = hit2.collider.gameObject.GetComponent<Rigidbody2D>();
-
-            if( hit2.transform.position.x < transform.position.x ){
-                hitRB.linearVelocityX -= baseKnockback * baseAttackDamage / 4;
-                hitRB.linearVelocityY += baseKnockback * baseAttackDamage / 4;
-            }else{
-                hitRB.linearVelocityX += baseKnockback * baseAttackDamage / 4;
-                hitRB.linearVelocityY += baseKnockback * baseAttackDamage / 4;
+            if(hit2.collider.gameObject.GetComponent<PlayerController>() != null){
+                hit2.collider.gameObject.GetComponent<PlayerController>().TakeDamage(baseAttackDamage);
+            }else if(hit2.collider.gameObject.GetComponent<PlayerController>() != null){
+                hit2.collider.gameObject.GetComponent<PlayerControllerWolf>().TakeDamage(baseAttackDamage);
+            }else if(hit2.collider.gameObject.GetComponent<PlayerControllerRobot>() != null){
+                hit2.collider.gameObject.GetComponent<PlayerControllerRobot>().TakeDamage(baseAttackDamage);
+            }else if(hit2.collider.gameObject.GetComponent<PlayerControllerStick>()){
+                hit2.collider.gameObject.GetComponent<PlayerControllerStick>().TakeDamage(baseAttackDamage);
             }
 
+            if(hit2.collider.gameObject.GetComponent<Rigidbody2D>() != null){
+                Rigidbody2D hitRB = hit2.collider.gameObject.GetComponent<Rigidbody2D>();
+
+                if( hit2.transform.position.x < transform.position.x ){
+                    hitRB.linearVelocityX -= baseKnockback * baseAttackDamage / 4;
+                    hitRB.linearVelocityY += baseKnockback * baseAttackDamage / 4;
+                }else{
+                    hitRB.linearVelocityX += baseKnockback * baseAttackDamage / 4;
+                    hitRB.linearVelocityY += baseKnockback * baseAttackDamage / 4;
+                }
+            }
             Debug.Log("did damage to it!");
             repeatHit = true;
         }
@@ -210,9 +249,11 @@ public class PlayerControllerRobot : MonoBehaviour
 
     // coroutine to freeze the players actions for a time
     IEnumerator AttackFreeze(float timeToWait){
+        animator.SetBool("attacking", true);
         canMoveOrAttack = false;
         yield return new WaitForSeconds(timeToWait);
         canMoveOrAttack = true;
+        animator.SetBool("attacking", false);
     }
 
     // coroutine to let the attack do damage for a certain period of time
@@ -227,13 +268,16 @@ public class PlayerControllerRobot : MonoBehaviour
 
     // make the player recieve damage
     public void TakeDamage( int damageToTake){
+        animator.SetBool("gotHit", true);
         health -= damageToTake;
         if(health < 0){
             Die();
         }
+        animator.SetBool("gotHit", false);
     }
 
     private void Die(){
-
+        canMoveOrAttack = false;
+        animator.SetBool("dead", true);
     }
 }
