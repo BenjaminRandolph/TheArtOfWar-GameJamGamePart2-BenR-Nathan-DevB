@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 477db2a61eaa6b749bbfd7f7f500ab34
+guid: 94752f0e6adf30a4fb2ce3c60ff34fb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9133788803074125030
-    second: backButtonAsset1_0
+      213: 5503113648257459539
+    second: wolfDamage1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: backButtonAsset1_0
+      name: wolfDamage1_0
       rect:
         serializedVersion: 2
-        x: 284
-        y: 306
-        width: 3411
-        height: 1676
+        x: 43
+        y: 30
+        width: 3755
+        height: 2095
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a13935bf9734e3180800000000000000
-      internalID: -9133788803074125030
+      spriteID: 3556df2d4bcfe5c40800000000000000
+      internalID: 5503113648257459539
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      backButtonAsset1_0: -9133788803074125030
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
